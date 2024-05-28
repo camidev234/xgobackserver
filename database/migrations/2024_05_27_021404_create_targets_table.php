@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rates', function (Blueprint $table) {
+        Schema::create('targets', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('description', 90);
-            $table->float('base_price', 9, 2);
-            $table->foreignId('target_id')->references('id')->on('targets');
+            $table->string('color', 15);
+            $table->string('name', 30);
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rates');
+        Schema::dropIfExists('targets');
     }
 };

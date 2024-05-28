@@ -3,6 +3,7 @@
 use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RateController;
+use App\Http\Controllers\TargetController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/aircraft/getAll', [AircraftController::class, 'getAllAircraft']);
     Route::get('/aircraft/show/{aircraft}', [AircraftController::class, 'show']);
     Route::post('/rates/saveRate', [RateController::class, 'saveRate']);
+    Route::get('/rates/getAll', [RateController::class, 'getAllRates']);
+    Route::post('/targets/saveTarget', [TargetController::class, 'saveTarget']);
+    Route::get('/targets/getAll', [TargetController::class, 'getAll']);
 });
 
 Route::post('/user/login', [AuthController::class, 'login']);

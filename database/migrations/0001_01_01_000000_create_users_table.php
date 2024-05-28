@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('role_id')->references('id')->on('roles');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('is_active')->default(1);
+            $table->boolean('is_active')->default(1);   
             $table->rememberToken();
             $table->timestamps();
         });
